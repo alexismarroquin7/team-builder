@@ -6,7 +6,8 @@ const Form = (props) => {
 
     const handleChange = e => {
         const {name, value} = e.target;
-        console.log(`name: ${name} || value: ${value}`)
+        console.log(`name: ${name}`)
+        console.log(`value: ${value}`)
         update(name, value)
     }
 

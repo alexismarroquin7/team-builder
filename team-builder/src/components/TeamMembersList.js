@@ -3,15 +3,25 @@ import React from "react"
 
 const TeamMembersList = (props) => {
 
-    const {details} = props;
+    const {details, id} = props;
 
     // console.log(teamMembers)
 
     return (
-        <div>
-            <h2>{details.username}</h2>
-            <h2>{details.email}</h2>
-            <h2>{details.role}</h2>
+        <div className="team-members-list">
+            <h2>Team Member {id + 1}:</h2>
+            <p>
+                <span>Name:</span><br />
+                {details.username}
+            </p>
+            <p>
+                <span>E-mail:</span><br />
+                {details.email}
+            </p>
+            <p>
+                <span>Role:</span><br />
+                {details.role}
+            </p>
         </div>
     )
 }

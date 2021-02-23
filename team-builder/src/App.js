@@ -45,9 +45,13 @@ function App() {
         submit={submitForm}
       />
       {
-        teamMembers.map(member => {
+        teamMembers.map((member, idx) => {
           return (
-            <TeamMembersList details={member}/>
+            <TeamMembersList 
+              key={member.username}
+              details={member}
+              id={idx}
+            />
           )
         })
       }
