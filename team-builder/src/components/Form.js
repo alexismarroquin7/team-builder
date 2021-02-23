@@ -6,8 +6,6 @@ const Form = (props) => {
 
     const handleChange = e => {
         const {name, value} = e.target;
-        console.log(`name: ${name}`)
-        console.log(`value: ${value}`)
         update(name, value)
     }
 
@@ -18,7 +16,6 @@ const Form = (props) => {
 
     return (
         <div>
-            {/* <h2>Add A Team Member</h2> */}
             <form onSubmit={handleSubmit}>
                 <label>
                 Name:
@@ -47,7 +44,10 @@ const Form = (props) => {
                     <option value='FRONT_END_ENGINEER'>Front-end Engineer</option>
                     <option value='DESIGNER'>Designer</option>
                 </select><br />
-                <button type="submit">Submit</button>
+                <button 
+                    type="submit"
+                    disabled={!values.username || !values.email || !values.role}
+                >Submit</button>
             </form>
         </div>
     )

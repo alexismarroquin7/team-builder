@@ -13,6 +13,7 @@ function App() {
 
   const [teamMembers, setTeamMembers] = useState([]);
   const [formValues, setFormValues] = useState(initialFormValues)
+  // const [memberToEdit, setMemberToEdit] = useState({})
 
   const updateForm = (inputName, inputValue) => {
     setFormValues({
@@ -32,7 +33,6 @@ function App() {
     }
     console.log(newTeamMember)
     setTeamMembers([...teamMembers, newTeamMember])
-    console.log(teamMembers)
     setFormValues(initialFormValues)
   }
 
@@ -51,6 +51,7 @@ function App() {
               key={member.username}
               details={member}
               id={idx}
+              // setMemberToEdit={setMemberToEdit}
             />
           )
         })
