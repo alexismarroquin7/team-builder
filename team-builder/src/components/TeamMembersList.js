@@ -1,9 +1,7 @@
 import React from "react"
 
 
-const TeamMembersList = () => {
-
-
+const TeamMembersList = (props) => {
 
     return (
         <div>TeamMembersList</div>

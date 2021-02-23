@@ -4,7 +4,7 @@ import Form from './components/Form'
 import TeamMembersList from './components/TeamMembersList'
 
 const initialFormValues = {
-  name: '',
+  username: '',
   email: '',
   role: ''
 }
@@ -23,11 +23,11 @@ function App() {
 
   const submitForm = () => {
     const newTeamMember = {
-      name: formValues.name.trim(),
+      name: formValues.username.trim(),
       email: formValues.email.trim(),
       role: formValues.role.trim()
     }
-    if(!newTeamMember.name || !newTeamMember.email || !newTeamMember.role){
+    if(!newTeamMember.username || !newTeamMember.email || !newTeamMember.role){
       return;
     }
     setFormValues(initialFormValues)
@@ -36,8 +36,12 @@ function App() {
   return (
     <div className="App">
       <h1>Team Builder</h1>
-      <Form />
-      <TeamMembersList />
+      <Form 
+        values={formValues}
+        update={updateForm}
+        submit={submitForm}
+      />
+      <TeamMembersList teamMembers={teamMembers}/>
     </div>
   );
 }
