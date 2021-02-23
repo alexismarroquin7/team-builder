@@ -23,13 +23,16 @@ function App() {
 
   const submitForm = () => {
     const newTeamMember = {
-      name: formValues.username.trim(),
+      username: formValues.username.trim(),
       email: formValues.email.trim(),
       role: formValues.role.trim()
     }
     if(!newTeamMember.username || !newTeamMember.email || !newTeamMember.role){
       return;
     }
+    console.log(newTeamMember)
+    setTeamMembers([...teamMembers, newTeamMember])
+    console.log(teamMembers)
     setFormValues(initialFormValues)
   }
 
@@ -41,7 +44,13 @@ function App() {
         update={updateForm}
         submit={submitForm}
       />
-      <TeamMembersList teamMembers={teamMembers}/>
+      {
+        teamMembers.map(member => {
+          return (
+            <TeamMembersList details={member}/>
+          )
+        })
+      }
     </div>
   );
 }
